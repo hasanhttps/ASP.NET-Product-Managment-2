@@ -1,0 +1,12 @@
+﻿@model List<Product>
+<h1>Products</h1>
+<div class="container">
+    
+    @foreach(var product in Model) {
+        <a class="item" href=ProductById/@product.Id>
+            <img src=@product.ImageUrl >
+            <p>Name:@product.Name</p>
+            <p>Price:@product.Price</p>
+        </a>
+    }
+</div>

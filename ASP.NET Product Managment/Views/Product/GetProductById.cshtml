@@ -1,0 +1,18 @@
+﻿@model Product
+@using static ASP.NET_Product_Managment.Services.DatabaseService;
+
+<form asp-action="GetProductById">
+
+    <input type="number" asp-for=@Model.Id placeholder="Enter product id" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    @if (Model.Id != 0) {
+        <div class="product d-flex flex-column gap-3">
+            <img src=@((Model.ImageUrl != null) ? @Model.ImageUrl : "") height="200" width="200" style="object-fit: cover; border-radius: 8px;" />
+            <p>Product Id: @Model.Id</p>
+            <p>Product Name: @Model.Name</p>
+            <p>Product Price: @Model.Price</p>
+        </div>
+    }
+
+</form>

@@ -1,0 +1,19 @@
+﻿@model Product
+@using static ASP.NET_Product_Managment.Services.DatabaseService;
+
+<form asp-action="RemoveProduct">
+
+    <div class="products d-flex flex-column">
+        @foreach(var product in Products) {
+            <div class="product d-flex gap-3">
+                <p>Product Id: @product.Id</p>
+                <p>Product Name: @product.Name</p>
+                <p>Product Price: @product.Price</p>
+            </div>
+        }
+    </div>
+
+    <input type="number" asp-for=@Model.Id placeholder="Enter product id" />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
